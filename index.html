@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Instagram Funil</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="quiz-container">
+    <div class="quiz-header">
+        <img src="instagram-removebg-preview.png" alt="Instagram" class="logo">
+        <h2>Descubra o Seu Potencial de Crescimento no Instagram</h2>
+        <p>Faça este quiz de 2 minutos para receber um plano de ação <span class="personalizado">personalizado para aumentar</span> seu público e vender no Instagram </p>
+    </div>
+
+    <div class="quiz-options">
+        <button class="option-btn" data-goal="grow">
+            <div class="icon">📈</div>
+            <span>Crescer Mais Rápido</span>
+        </button>
+        <button class="option-btn" data-goal="sell">
+            <div class="icon">💰</div>
+            <span>Venda Mais</span>
+        </button>
+        <button class="option-btn" data-goal="engage">
+            <div class="icon">👥</div>
+            <span>Engaje Melhor</span>
+        </button>
+    </div>
+
+    <button class="start-btn hidden" id="start-btn">Começar Quiz Agora 🚀</button>
+
+    <div id="result" class="hidden">
+        <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Crescimento no Instagram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="quiz-wrapper">
+
+  <!-- Cabeçalho progresso -->
+  <div class="progress-header">
+    <span id="step-text">Pergunta 1 de 7</span>
+    <span id="percent-text">14%</span>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress-fill" id="progress"></div>
+  </div>
+
+  <!-- Pergunta -->
+  <h1 id="question"></h1>
+
+  <!-- Opções -->
+  <div class="options" id="options"></div>
+
+</div>
+
+<script >
+    const quiz = [
+  {
+    pergunta: "Qual é seu principal objetivo no Instagram?",
+    opcoes: [
+      "👥 Ganhar seguidores",
+      "💰 Vender produtos ou serviços",
+      "⭐ Construir marca pessoal",
+      "🎯 Gerar leads"
+    ]
+  },
+  {
+    pergunta: "Como está seu Instagram hoje?",
+    opcoes: [
+      "📉 Pouco engajamento",
+      "😕 Poucos seguidores",
+      "❌ Não vendo nada",
+      "🤔 Não tenho estratégia"
+    ]
+  },
+  {
+    pergunta: "O que mais te impede de crescer?",
+    opcoes: [
+      "⏰ Falta de tempo",
+      "❓ Falta de conhecimento",
+      "📉 Conteúdo não engaja",
+      "💸 Não consigo vender"
+    ]
+  },
+  {
+    pergunta: "Com que frequência você posta?",
+    opcoes: [
+      "📅 Todos os dias",
+      "📆 3 a 4 vezes por semana",
+      "⏳ Raramente",
+      "❌ Quase nunca"
+    ]
+  },
+  {
+    pergunta: "Você sabe usar o Instagram de forma estratégica?",
+    opcoes: [
+      "✅ Sim, mas quero melhorar",
+      "🟡 Sei o básico",
+      "❌ Não sei",
+      "🤯 Me sinto perdido(a)"
+    ]
+  },
+  {
+    pergunta: "Em quanto tempo você quer ver resultados?",
+    opcoes: [
+      "⚡ O mais rápido possível",
+      "🚀 Em 7 dias",
+      "📈 Em 30 dias",
+      "⏳ Sem pressa"
+    ]
+  },
+  {
+    pergunta: "Você seguiria um passo a passo simples se ele funcionasse?",
+    opcoes: [
+      "🔥 Sim, com certeza",
+      "💡 Quero aprender",
+      "📘 Preciso de um plano",
+      "🚀 Quero crescer agora"
+    ]
+  }
+];
+
+let atual = 0;
+
+const questionEl = document.getElementById("question");
+const optionsEl = document.getElementById("options");
+const progressEl = document.getElementById("progress");
+const stepText = document.getElementById("step-text");
+const percentText = document.getElementById("percent-text");
+
+function carregarPergunta() {
+  const q = quiz[atual];
+  questionEl.innerText = q.pergunta;
+  optionsEl.innerHTML = "";
+
+  q.opcoes.forEach(opcao => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    btn.innerText = opcao;
+    btn.onclick = proxima;
+    optionsEl.appendChild(btn);
+  });
+
+  const percent = Math.round(((atual + 1) / quiz.length) * 100);
+  progressEl.style.width = percent + "%";
+  stepText.innerText = `Pergunta ${atual + 1} de ${quiz.length}`;
+  percentText.innerText = percent + "%";
+}
+
+function proxima() {
+  if (atual < quiz.length - 1) {
+    atual++;
+    carregarPergunta();
+  } else {
+    finalizarQuiz();
+  }
+}
+
+function finalizarQuiz() {
+  questionEl.innerText = "🎉 Seu plano ideal está pronto!";
+ optionsEl.innerHTML = `
+  <a href="SEU_LINK_AQUI"
+     class="option"
+     style="text-decoration:none; color:inherit;"
+     target="_blank">
+     🚀 Acessar Guia de Crescimento no Instagram – R$39
+  </a>
+`;
+
+  progressEl.style.width = "100%";
+  stepText.innerText = "Concluído";
+  percentText.innerText = "100%";
+}
+
+carregarPergunta();
+
+</script>
+</body>
+</html>
+
+        
+    </div>
+</div>
+
+<script>
+const options = document.querySelectorAll('.option-btn');
+const startBtn = document.getElementById('start-btn');
+const result = document.getElementById('result');
+
+options.forEach(option => {
+    option.addEventListener('click', () => {
+        // Adiciona animação ao clicar
+        options.forEach(o => o.classList.add('fade-out'));
+        setTimeout(() => {
+            document.querySelector('.quiz-options').classList.add('hidden');
+            startBtn.classList.remove('hidden');
+        }, 300);
+    });
+});
+
+startBtn.addEventListener('click', () => {
+    startBtn.classList.add('hidden');
+    result.classList.remove('hidden');
+});
+</script>
+</body>
+</html>
